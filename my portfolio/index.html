@@ -1,0 +1,1251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kadisco Justice - Visionary Developer & Entrepreneur</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #0A2463;
+            --secondary-color: #FFD700;
+            --accent-color: #3E92CC;
+            --background-color: #F8F8F8;
+            --text-color: #333333;
+            --light-text: #FFFFFF;
+            --dark-blue: #001845;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, .hero-title, .section-title {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+        }
+        
+        /* Navigation */
+        .navbar {
+            background-color: rgba(10, 36, 99, 0.95);
+            box-shadow: 0 2px 30px rgba(0, 0, 0, 0.15);
+            padding: 25px 0;
+            transition: all 0.4s ease;
+        }
+        
+        .navbar.scrolled {
+            padding: 15px 0;
+            backdrop-filter: blur(10px);
+            background-color: rgba(10, 36, 99, 0.92);
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--secondary-color) !important;
+            font-size: 2rem;
+            letter-spacing: 1px;
+        }
+        
+        .nav-link {
+            color: var(--light-text) !important;
+            font-weight: 500;
+            margin: 0 15px;
+            transition: all 0.3s ease;
+            position: relative;
+            font-size: 1.1rem;
+            letter-spacing: 0.5px;
+        }
+        
+        .nav-link:hover {
+            color: var(--secondary-color) !important;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--secondary-color);
+            bottom: 0;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover:after {
+            width: 100%;
+        }
+        
+        /* Hero Section */
+        #hero {
+            background: linear-gradient(135deg, var(--dark-blue) 0%, var(--primary-color) 100%);
+            color: white;
+            padding: 180px 0 150px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-text {
+            max-width: 700px;
+            margin-right: auto;
+        }
+        
+        .hero-title {
+            font-size: 4.2rem;
+            margin-bottom: 25px;
+            line-height: 1.2;
+            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .hero-subtitle {
+            font-size: 2rem;
+            margin-bottom: 35px;
+            color: var(--secondary-color);
+            font-weight: 500;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .hero-subtitle:after {
+            content: '';
+            position: absolute;
+            width: 60%;
+            height: 3px;
+            background: var(--secondary-color);
+            bottom: -15px;
+            left: 0;
+        }
+        
+        .hero-description {
+            font-size: 1.3rem;
+            margin-bottom: 45px;
+            opacity: 0.9;
+            max-width: 600px;
+        }
+        
+     .hero-image {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 45%;
+    height: 100%;
+    background: url('./justice2.jpg') no-repeat center center/contain; /* Changed from cover to contain */
+    background-size: contain; /* Ensures full image is visible */
+    background-position: center center;
+    z-index: 1;
+}
+        
+        .btn-primary {
+            background-color: var(--secondary-color);
+            border: none;
+            color: var(--primary-color);
+            font-weight: 600;
+            padding: 18px 40px;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            letter-spacing: 0.5px;
+            font-size: 1.1rem;
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-primary:hover {
+            background-color: #e6c300;
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(255, 215, 0, 0.4);
+            color: var(--primary-color);
+        }
+        
+        .btn-outline-light {
+            border-width: 2px;
+            padding: 16px 38px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+        
+        .btn-outline-light:hover {
+            background-color: white;
+            color: var(--primary-color);
+        }
+        
+        /* About Section */
+        #about {
+            padding: 150px 0;
+            position: relative;
+            background-color: white;
+        }
+        
+        .section-title {
+            color: var(--primary-color);
+            margin-bottom: 80px;
+            font-size: 3rem;
+            text-align: center;
+        }
+        
+        .about-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .about-text {
+            font-size: 1.2rem;
+            line-height: 1.9;
+            margin-bottom: 40px;
+        }
+        
+        .about-text p {
+            margin-bottom: 25px;
+        }
+        
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+        
+        .skill-tag {
+            background-color: rgba(10, 36, 99, 0.1);
+            color: var(--primary-color);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 500;
+            border: 1px solid rgba(10, 36, 99, 0.2);
+        }
+        
+        .mission-box {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--dark-blue) 100%);
+            color: white;
+            padding: 60px;
+            border-radius: 20px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
+            margin-top: 60px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .mission-box:before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 215, 0, 0.1);
+            border-radius: 50%;
+        }
+        
+        .mission-box h3 {
+            color: var(--secondary-color);
+            margin-bottom: 30px;
+            font-size: 2.2rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .mission-box h3:after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 3px;
+            background: var(--secondary-color);
+            bottom: -10px;
+            left: 0;
+        }
+        
+        .mission-box p {
+            font-size: 1.2rem;
+            line-height: 1.9;
+            opacity: 0.9;
+        }
+        
+        /* Image Slider */
+       .profile-slider-container {
+    margin-top: 60px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+    height: auto; /* Changed from fixed height */
+    min-height: 500px;
+}
+
+.carousel-item {
+    height: auto;
+    min-height: 500px;
+}
+
+.carousel-item img {
+    object-fit: contain; /* Changed from cover to contain */
+    object-position: center center;
+    width: 100%;
+    height: auto;
+    max-height: 600px;
+}
+        
+        .carousel-control-prev, .carousel-control-next {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(10, 36, 99, 0.7);
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 1;
+        }
+        
+        .carousel-control-prev {
+            left: 30px;
+        }
+        
+        .carousel-control-next {
+            right: 30px;
+        }
+        
+        .carousel-indicators [data-bs-target] {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin: 0 8px;
+            background-color: rgba(255, 255, 255, 0.3);
+            border: none;
+        }
+        
+        .carousel-indicators .active {
+            background-color: var(--secondary-color);
+        }
+        
+        /* Services Section */
+        #services {
+            background-color: var(--background-color);
+            padding: 150px 0;
+            position: relative;
+        }
+        
+        .service-card {
+            background-color: white;
+            border-radius: 15px;
+            padding: 50px 40px;
+            margin-bottom: 30px;
+            transition: all 0.4s ease;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.05);
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-number {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            font-size: 3rem;
+            font-weight: 700;
+            color: rgba(10, 36, 99, 0.05);
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .service-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 0;
+            background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+            transition: all 0.4s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+            border-color: transparent;
+        }
+        
+        .service-card:hover:before {
+            height: 100%;
+        }
+        
+        .service-icon {
+            font-size: 3rem;
+            color: var(--secondary-color);
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover .service-icon {
+            transform: scale(1.1);
+            color: var(--primary-color);
+        }
+        
+        .service-card h3 {
+            margin-bottom: 25px;
+            font-weight: 700;
+            position: relative;
+            padding-bottom: 15px;
+            color: var(--primary-color);
+        }
+        
+        .service-card h3:after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            background: var(--primary-color);
+            bottom: 0;
+            left: 0;
+            opacity: 0.3;
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover h3:after {
+            width: 80px;
+            opacity: 1;
+            background: var(--secondary-color);
+        }
+        
+        /* Testimonials Section */
+        #testimonials {
+            padding: 150px 0;
+            background-color: white;
+        }
+        
+        .testimonial-card {
+            background-color: var(--background-color);
+            border-radius: 15px;
+            padding: 50px 40px;
+            margin: 20px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            font-size: 1.1rem;
+            line-height: 1.9;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        .testimonial-text:before {
+            content: '\201C';
+            position: absolute;
+            top: -30px;
+            left: -20px;
+            font-size: 5rem;
+            color: rgba(10, 36, 99, 0.1);
+            font-family: Georgia, serif;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .testimonial-author-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 20px;
+            border: 3px solid var(--secondary-color);
+        }
+        
+        .testimonial-author-info h4 {
+            font-weight: 700;
+            margin-bottom: 5px;
+            color: var(--primary-color);
+        }
+        
+        .testimonial-author-info p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        /* Contact Section */
+        #contact {
+            padding: 150px 0;
+            background-color: var(--background-color);
+            position: relative;
+        }
+        
+        .contact-info {
+            margin-bottom: 60px;
+        }
+        
+        .contact-info h3 {
+            margin-bottom: 40px;
+            color: var(--primary-color);
+            font-weight: 700;
+            font-size: 2rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 35px;
+        }
+        
+        .contact-icon {
+            color: var(--secondary-color);
+            font-size: 2rem;
+            margin-right: 25px;
+            flex-shrink: 0;
+        }
+        
+        .contact-details h4 {
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+        }
+        
+        .contact-details p, .contact-details a {
+            color: var(--text-color);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-details a:hover {
+            color: var(--primary-color);
+        }
+        
+        .social-icons {
+            margin-top: 50px;
+        }
+        
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            background: rgba(10, 36, 99, 0.05);
+            color: var(--primary-color);
+            border-radius: 50%;
+            font-size: 1.8rem;
+            margin-right: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-control {
+            border-radius: 10px;
+            border: 1px solid #e0e0e0;
+            padding: 18px 25px;
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            height: auto;
+        }
+        
+        .form-control:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 5px 20px rgba(10, 36, 99, 0.1);
+        }
+        
+        textarea.form-control {
+            min-height: 200px;
+        }
+        
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--dark-blue) 0%, var(--primary-color) 100%);
+            color: white;
+            padding: 100px 0 40px;
+            position: relative;
+        }
+        
+        .footer-logo {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin-bottom: 30px;
+            display: inline-block;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .footer-about {
+            margin-bottom: 40px;
+            font-size: 1.1rem;
+            opacity: 0.9;
+            line-height: 1.9;
+        }
+        
+        .footer-links h3, .footer-newsletter h3 {
+            color: var(--secondary-color);
+            margin-bottom: 30px;
+            font-weight: 600;
+            font-size: 1.5rem;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .footer-links h3:after, .footer-newsletter h3:after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            background: var(--secondary-color);
+            bottom: 0;
+            left: 0;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 15px;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            position: relative;
+            padding-left: 25px;
+            font-size: 1.1rem;
+        }
+        
+        .footer-links a:before {
+            content: '\f054';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 0.8rem;
+            color: var(--secondary-color);
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+            padding-left: 30px;
+        }
+        
+        .footer-links a:hover:before {
+            opacity: 1;
+            left: 5px;
+        }
+        
+        .newsletter-form {
+            position: relative;
+        }
+        
+        .newsletter-form input {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            border-radius: 50px;
+            padding-right: 140px;
+            height: 60px;
+            font-size: 1.1rem;
+        }
+        
+        .newsletter-form input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .newsletter-form button {
+            position: absolute;
+            right: 5px;
+            top: 5px;
+            bottom: 5px;
+            border-radius: 50px;
+            padding: 0 30px;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 40px;
+            margin-top: 60px;
+            text-align: center;
+            font-size: 1.1rem;
+            opacity: 0.8;
+        }
+        
+        /* Responsive Adjustments */
+       @media (max-width: 991px) {
+    .hero-image {
+        position: relative;
+        width: 100%;
+        height: auto;
+        min-height: 400px;
+        margin-top: 60px;
+    }
+    
+    .profile-slider-container {
+        min-height: 400px;
+    }
+    
+    .carousel-item img {
+        max-height: 400px;
+    }
+}
+
+@media (max-width: 767px) {
+    .hero-image {
+        min-height: 350px;
+    }
+    
+    .profile-slider-container {
+        min-height: 350px;
+    }
+    
+    .carousel-item img {
+        max-height: 350px;
+    }
+}
+
+@media (max-width: 575px) {
+    .hero-image {
+        min-height: 300px;
+    }
+    
+    .profile-slider-container {
+        min-height: 300px;
+    }
+    
+    .carousel-item img {
+        max-height: 300px;
+    }
+}
+            
+            .carousel-item {
+                height: 500px;
+            }
+        }
+        
+        @media (max-width: 991px) {
+            #hero {
+                padding: 150px 0 100px;
+            }
+            
+            .hero-content {
+                text-align: center;
+            }
+            
+            .hero-text {
+                margin: 0 auto;
+            }
+            
+            .hero-image {
+                position: relative;
+                width: 100%;
+                height: 400px;
+                margin-top: 60px;
+                transform: none;
+            }
+            
+            .hero-subtitle:after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            
+            .btn-primary, .btn-outline-light {
+                display: block;
+                width: 100%;
+                max-width: 300px;
+                margin: 0 auto 20px;
+            }
+            
+            .profile-slider-container {
+                height: 400px;
+            }
+            
+            .carousel-item {
+                height: 400px;
+            }
+        }
+        
+        @media (max-width: 767px) {
+            .hero-title {
+                font-size: 2.8rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.5rem;
+            }
+            
+            .hero-description {
+                font-size: 1.1rem;
+            }
+            
+            .section-title {
+                font-size: 2.5rem;
+            }
+            
+            .mission-box {
+                padding: 40px;
+            }
+            
+            .mission-box h3 {
+                font-size: 1.8rem;
+            }
+            
+            .service-card {
+                padding: 40px 30px;
+            }
+            
+            .profile-slider-container {
+                height: 350px;
+            }
+            
+            .carousel-item {
+                height: 350px;
+            }
+        }
+        
+        @media (max-width: 575px) {
+            #hero {
+                padding: 120px 0 80px;
+            }
+            
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.3rem;
+            }
+            
+            .hero-image {
+                height: 300px;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .profile-slider-container {
+                height: 300px;
+            }
+            
+            .carousel-item {
+                height: 300px;
+            }
+            
+            .carousel-control-prev, .carousel-control-next {
+                width: 50px;
+                height: 50px;
+            }
+            
+            .navbar-brand {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body data-bs-spy="scroll" data-bs-target=".navbar">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Kadisco Justice</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#hero">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#testimonials">Testimonials</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="portfolio.html">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">Kadisco Justice</h1>
+                    <p class="hero-subtitle">Visionary Developer & Entrepreneur</p>
+                    <p class="hero-description">Transforming lives through technology and purpose-driven leadership</p>
+                    <div class="hero-buttons">
+                        <a href="#contact" class="btn btn-primary btn-lg me-3">Get In Touch</a>
+                        <a href="#about" class="btn btn-outline-light btn-lg">Explore More</a>
+                    </div>
+                </div>
+                <div class="hero-image"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>I'm a passionate web and mobile app developer with a strong track record of creating impactful digital solutions. Through clean, efficient code and well-designed platforms, I aim to transform lives and elevate the status of our clients.</p>
+                    
+                    <p>I'm proficient in several programming languages and frameworks, including Python, JavaScript, Dart, Flutter, Bootstrap, HTML, and CSS.</p>
+                    
+                    <div class="skills-list">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">Dart</span>
+                        <span class="skill-tag">Flutter</span>
+                        <span class="skill-tag">Bootstrap</span>
+                        <span class="skill-tag">HTML/CSS</span>
+                    </div>
+                    
+                    <p>My journey into entrepreneurship began from a deep curiosity and desire to be part of building better nations. This led me to found Send Jay Logistics, a purpose-driven last-mile delivery brand focused on restoring employee dignity and delivering exceptional customer satisfaction.</p>
+                    
+                    <p>Beyond tech and business, I'm also a public speaker and leadership trainer, committed to inspiring growth and excellence in others. 💪</p>
+                </div>
+                
+                <div class="mission-box">
+                    <h3>Mission</h3>
+                    <p>My mission is to help create a world where everyone thrives and prospers—driven by love, innovation, and creativity. I'm committed to using technology and purpose-driven solutions to uplift lives and contribute meaningfully to the fight against poverty, in alignment with the United Nations Sustainable Development Goals (SDGs).</p>
+                </div>
+                
+                <!-- Profile Image Slider -->
+                <div class="profile-slider-container">
+                    <div id="profileCarousel" class="carousel slide h-100" data-bs-ride="carousel">
+                        <div class="carousel-inner h-100">
+                            <div class="carousel-item active h-100">
+                                <img src="./justice.jpg" class="d-block w-100" alt="Kadisco Justice">
+                            </div>
+                            <div class="carousel-item h-100">
+                                <img src="./justice3.jpg" class="d-block w-100" alt="Kadisco Justice">
+                            </div>
+                            <div class="carousel-item h-100">
+                                <img src="./justice1.jpg" class="d-block w-100" alt="Kadisco Justice">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#profileCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#profileCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#profileCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#profileCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#profileCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <h2 class="section-title">My Services</h2>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card">
+                        <div class="service-number">1</div>
+                        <div class="service-icon">
+                            <i class="fas fa-chess-king"></i>
+                        </div>
+                        <h3>Leadership Roles</h3>
+                        <p>Serving as CEO, GM, Director, or COO—providing strategic leadership and building purpose-driven teams.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card">
+                        <div class="service-number">2</div>
+                        <div class="service-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3>Web Development</h3>
+                        <p>Building professional websites that give brands a strong global presence and help first-time founders bring their ideas online.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card">
+                        <div class="service-number">3</div>
+                        <div class="service-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3>Mobile App Development</h3>
+                        <p>Creating user-focused mobile apps that enhance engagement, boost brand visibility, and make your services easily accessible.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card">
+                        <div class="service-number">4</div>
+                        <div class="service-icon">
+                            <i class="fas fa-pen-fancy"></i>
+                        </div>
+                        <h3>Creative Writing</h3>
+                        <p>Crafting compelling content that communicates ideas, inspires action, and builds emotional connection.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card">
+                        <div class="service-number">5</div>
+                        <div class="service-icon">
+                            <i class="fas fa-hands-helping"></i>
+                        </div>
+                        <h3>Emotional Support & Mentorship</h3>
+                        <p>Offering guidance, relationship advice, and mentorship to support personal growth and emotional well-being.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials">
+        <div class="container">
+            <h2 class="section-title">Client Testimonials</h2>
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="testimonial-card">
+                        <div class="testimonial-text">
+                            "Kadisco's leadership transformed our company culture. His strategic vision and ability to build high-performing teams helped us achieve 300% growth in just two years."
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Client" class="testimonial-author-img">
+                            <div class="testimonial-author-info">
+                                <h4>Sarah Johnson</h4>
+                                <p>CEO, TechSolutions Inc.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="testimonial-card">
+                        <div class="testimonial-text">
+                            "The mobile app Kadisco developed for our business exceeded all expectations. User engagement increased by 150% and customer satisfaction scores are at an all-time high."
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client" class="testimonial-author-img">
+                            <div class="testimonial-author-info">
+                                <h4>Michael Brown</h4>
+                                <p>Founder, Retail Innovations</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="testimonial-card">
+                        <div class="testimonial-text">
+                            "Working with Kadisco on our website redesign was a game-changer. He understood our vision perfectly and delivered a site that truly represents our brand's values and mission."
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Client" class="testimonial-author-img">
+                            <div class="testimonial-author-info">
+                                <h4>Amina Diallo</h4>
+                                <p>Marketing Director, Global Goods</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Me</h2>
+            <div class="row">
+                <div class="col-lg-5">
+                    <div class="contact-info">
+                        <h3>Contact Information</h3>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt contact-icon"></i>
+                            <div class="contact-details">
+                                <h4>Location</h4>
+                                <p>No_15 Okpanam Road, Asaba, Delta state, Nigeria</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone contact-icon"></i>
+                            <div class="contact-details">
+                                <h4>Phone</h4>
+                                <a href="tel:+2349114167785">+2349114167785</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope contact-icon"></i>
+                            <div class="contact-details">
+                                <h4>Email</h4>
+                                <a href="mailto:justicekadisco@gmail.com">justicekadisco@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock contact-icon"></i>
+                            <div class="contact-details">
+                                <h4>Working Hours</h4>
+                                <p>Mon - Sat: 8:00 AM - 9:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="social-icons">
+                        <a href="https://x.com/kadiscojustice?t=6q10-XaUhDt7irvL4aEc0w&s=09" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=100086435726980" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/kadisco_justice1?igsh=ZGoybWFjMzBheXVu" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/2349114167785" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <form id="contactForm">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" placeholder="Your Name" required>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="email" class="form-control" placeholder="Your Email" required>
+                            </div>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Subject">
+                        <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="footer-about">
+                        <span class="footer-logo">Kadisco Justice</span>
+                        <p>Visionary developer and entrepreneur transforming lives through technology and purpose-driven leadership.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="footer-links">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="#hero">Home</a></li>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#services">Services</a></li>
+                            <li><a href="portfolio.html">Portfolio</a></li>
+                            <li><a href="#testimonials">Testimonials</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="footer-newsletter">
+                        <h3>Newsletter</h3>
+                        <p>Subscribe to my newsletter for the latest insights and updates.</p>
+                        <form class="newsletter-form mt-4">
+                            <input type="email" class="form-control" placeholder="Your Email Address">
+                            <button class="btn btn-primary" type="submit">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> Kadisco Justice. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Update copyright year automatically
+        document.getElementById('year').textContent = new Date().getFullYear();
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Form submission handling
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! I will get back to you soon.');
+            this.reset();
+        });
+        
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+        
+        // Animation on scroll
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.service-card, .about-text, .mission-box, .testimonial-card');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.2;
+                
+                if (elementPosition < screenPosition) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        }
+        
+        // Set initial state for animated elements
+        document.querySelectorAll('.service-card, .about-text, .mission-box, .testimonial-card').forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(30px)';
+            element.style.transition = 'all 0.6s ease';
+        });
+        
+        // Run animation check on scroll and load
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+    </script>
+</body>
+</html>

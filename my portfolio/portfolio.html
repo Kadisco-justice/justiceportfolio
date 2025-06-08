@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Kadisco Justice</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #0A2463;
+            --secondary-color: #FFD700;
+            --accent-color: #3E92CC;
+            --background-color: #F8F8F8;
+            --text-color: #333333;
+            --light-text: #FFFFFF;
+            --dark-blue: #001845;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, .portfolio-title, .section-title {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+        }
+        
+        /* Navigation */
+        .navbar {
+            background-color: rgba(10, 36, 99, 0.95);
+            box-shadow: 0 2px 30px rgba(0, 0, 0, 0.15);
+            padding: 25px 0;
+            transition: all 0.4s ease;
+        }
+        
+        .navbar.scrolled {
+            padding: 15px 0;
+            backdrop-filter: blur(10px);
+            background-color: rgba(10, 36, 99, 0.92);
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--secondary-color) !important;
+            font-size: 2rem;
+            letter-spacing: 1px;
+        }
+        
+        .nav-link {
+            color: var(--light-text) !important;
+            font-weight: 500;
+            margin: 0 15px;
+            transition: all 0.3s ease;
+            position: relative;
+            font-size: 1.1rem;
+            letter-spacing: 0.5px;
+        }
+        
+        .nav-link:hover {
+            color: var(--secondary-color) !important;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--secondary-color);
+            bottom: 0;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover:after {
+            width: 100%;
+        }
+        
+        /* Portfolio Header */
+        #portfolio-header {
+            background: linear-gradient(135deg, var(--dark-blue) 0%, var(--primary-color) 100%);
+            color: white;
+            padding: 180px 0 100px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .portfolio-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .portfolio-subtitle {
+            font-size: 1.5rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+        
+        /* Portfolio Section */
+        #portfolio {
+            padding: 100px 0;
+        }
+        
+        .section-title {
+            color: var(--primary-color);
+            font-weight: 700;
+            margin-bottom: 60px;
+            position: relative;
+            display: inline-block;
+            font-size: 2.5rem;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            bottom: -15px;
+            left: 0;
+            border-radius: 5px;
+        }
+        
+        .portfolio-item {
+            position: relative;
+            margin-bottom: 30px;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+        }
+        
+        .portfolio-img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            transition: all 0.5s ease;
+        }
+        
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 36, 99, 0.9);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: all 0.3s ease;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+        
+        .portfolio-item:hover .portfolio-img {
+            transform: scale(1.05);
+        }
+        
+        .portfolio-category {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .portfolio-overlay h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .portfolio-overlay p {
+            margin-bottom: 20px;
+            font-size: 1rem;
+        }
+        
+        .btn-primary {
+            background-color: var(--secondary-color);
+            border: none;
+            color: var(--primary-color);
+            font-weight: 600;
+            padding: 12px 30px;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-primary:hover {
+            background-color: #e6c300;
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Back to Home */
+        .back-to-home {
+            text-align: center;
+            margin-top: 60px;
+        }
+        
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--dark-blue) 0%, var(--primary-color) 100%);
+            color: white;
+            padding: 80px 0 30px;
+        }
+        
+        .footer-logo {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin-bottom: 25px;
+            display: inline-block;
+        }
+        
+        .footer-about {
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .footer-links h3, .footer-newsletter h3 {
+            color: var(--secondary-color);
+            margin-bottom: 25px;
+            font-weight: 600;
+            font-size: 1.5rem;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .footer-links h3:after, .footer-newsletter h3:after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            background: var(--secondary-color);
+            bottom: 0;
+            left: 0;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 15px;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            position: relative;
+            padding-left: 25px;
+            font-size: 1.1rem;
+        }
+        
+        .footer-links a:before {
+            content: '\f054';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 0.8rem;
+            color: var(--secondary-color);
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+            padding-left: 30px;
+        }
+        
+        .footer-links a:hover:before {
+            opacity: 1;
+            left: 5px;
+        }
+        
+        .newsletter-form {
+            position: relative;
+        }
+        
+        .newsletter-form input {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            border-radius: 50px;
+            padding-right: 120px;
+            height: 50px;
+        }
+        
+        .newsletter-form input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .newsletter-form button {
+            position: absolute;
+            right: 5px;
+            top: 5px;
+            bottom: 5px;
+            border-radius: 50px;
+            padding: 0 25px;
+            font-weight: 600;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 30px;
+            margin-top: 50px;
+            text-align: center;
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 1199px) {
+            .portfolio-title {
+                font-size: 3rem;
+            }
+        }
+        
+        @media (max-width: 991px) {
+            #portfolio-header {
+                padding: 150px 0 80px;
+            }
+            
+            .portfolio-title {
+                font-size: 2.5rem;
+            }
+            
+            .portfolio-subtitle {
+                font-size: 1.3rem;
+            }
+            
+            .portfolio-img {
+                height: 250px;
+            }
+        }
+        
+        @media (max-width: 767px) {
+            .portfolio-title {
+                font-size: 2.2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .portfolio-img {
+                height: 200px;
+            }
+        }
+        
+        @media (max-width: 575px) {
+            #portfolio-header {
+                padding: 120px 0 60px;
+            }
+            
+            .portfolio-title {
+                font-size: 1.8rem;
+            }
+            
+            .portfolio-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .navbar-brand {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Kadisco Justice</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="portfolio.html">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#testimonials">Testimonials</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Portfolio Header -->
+    <section id="portfolio-header">
+        <div class="container">
+            <h1 class="portfolio-title">My Portfolio</h1>
+            <p class="portfolio-subtitle">Explore my successful projects and case studies that demonstrate my expertise in technology and leadership solutions</p>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio">
+        <div class="container">
+            <h2 class="section-title text-center">Featured Projects</h2>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="portfolio-item">
+                        <img src="./port2.jpg" alt="Web Development" class="portfolio-img">
+                        <div class="portfolio-overlay">
+                            <span class="portfolio-category">Web Development</span>
+                            <h3>Relationship Platform</h3>
+                            <p>Developed Converge, a social connection platform that helps young men and older women build meaningful, purpose-driven relationships in a trusted and respectful environment.</p>
+                            <a href="#" class="btn btn-primary mt-3">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="portfolio-item">
+                        <img src="https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Mobile App" class="portfolio-img">
+                        <div class="portfolio-overlay">
+                            <span class="portfolio-category">Mobile App</span>
+                            <h3>Health Tracking App</h3>
+                            <p>Created a cross-platform health monitoring application with real-time analytics.</p>
+                            <a href="#" class="btn btn-primary mt-3">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="portfolio-item">
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Leadership" class="portfolio-img">
+                        <div class="portfolio-overlay">
+                            <span class="portfolio-category">Leadership</span>
+                            <h3>Corporate Transformation</h3>
+                            <p>Led digital transformation initiative resulting in 40% operational efficiency gains.</p>
+                            <a href="#" class="btn btn-primary mt-3">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="portfolio-item">
+                        <img src="./port1.jpg" alt="Logistics" class="portfolio-img">
+                        <div class="portfolio-overlay">
+                            <span class="portfolio-category">Logistics</span>
+                            <h3>Send Jay Logistics</h3>
+                            <p>Built a last-mile delivery solution focused on employee dignity and customer satisfaction.</p>
+                            <a href ="https://www.sendjaylogistics.com" class="btn btn-primary mt-3">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="portfolio-item">
+                        <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Public Speaking" class="portfolio-img">
+                        <div class="portfolio-overlay">
+                            <span class="portfolio-category">Public Speaking</span>
+                            <h3>Leadership Conference</h3>
+                            <p>Keynote speaker at national leadership conference on technology and social impact.</p>
+                            <a href="#" class="btn btn-primary mt-3">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="portfolio-item">
+                        <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Mentorship" class="portfolio-img">
+                        <div class="portfolio-overlay">
+                            <span class="portfolio-category">Mentorship</span>
+                            <h3>Youth Development Program</h3>
+                            <p>Established mentorship initiative helping 100+ young entrepreneurs launch businesses.</p>
+                            <a href="#" class="btn btn-primary mt-3">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="back-to-home">
+                <a href="index.html" class="btn btn-primary btn-lg">Back to Home</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <span class="footer-logo">Kadisco Justice</span>
+                    <div class="footer-about">
+                        <p>Visionary developer and entrepreneur transforming lives through technology and purpose-driven leadership.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="footer-links">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="index.html#about">About</a></li>
+                            <li><a href="index.html#services">Services</a></li>
+                            <li><a href="portfolio.html">Portfolio</a></li>
+                            <li><a href="index.html#testimonials">Testimonials</a></li>
+                            <li><a href="index.html#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="footer-newsletter">
+                        <h3>Newsletter</h3>
+                        <p>Subscribe for the latest insights and updates.</p>
+                        <form class="newsletter-form mt-4">
+                            <input type="email" class="form-control" placeholder="Your Email Address">
+                            <button class="btn btn-primary" type="submit">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> Kadisco Justice. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Update copyright year automatically
+        document.getElementById('year').textContent = new Date().getFullYear();
+        
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+        
+        // Animation on scroll
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.portfolio-item');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.2;
+                
+                if (elementPosition < screenPosition) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        }
+        
+        // Set initial state for animated elements
+        document.querySelectorAll('.portfolio-item').forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(30px)';
+            element.style.transition = 'all 0.6s ease';
+        });
+        
+        // Run animation check on scroll and load
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+    </script>
+</body>
+</html>
